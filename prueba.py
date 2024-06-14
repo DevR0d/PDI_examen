@@ -1,1 +1,1 @@
-#hola mundo cisneros gey 
+print("hola mundo")
