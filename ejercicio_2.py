@@ -4,7 +4,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 img1 = cv2.imread('lenna.png', cv2.IMREAD_GRAYSCALE)
-img2 = cv2.imread('lenna2.png', cv2.IMREAD_GRAYSCALE)
+img2 = cv2.imread('lenna_s.png', cv2.IMREAD_GRAYSCALE)
 if img1 is None or img2 is None:
     print ('Hubo un error al cargar las imagenes')
 else:
@@ -19,6 +19,6 @@ emparejamientos = bf.match(descriptores1, descriptores2)
 emparejamientos = sorted(emparejamientos, key=lambda x:x.distance)
 img_emparejada = cv2.drawMatches(img1, p_clave1, img2, p_clave2, emparejamientos[:10], None, flags=2)
 
-plt.f(figsize=(12, 6))
+plt.figure(figsize=(12, 6))
 plt.imshow(img_emparejada)
 plt.show()
